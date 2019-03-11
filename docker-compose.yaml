@@ -4,18 +4,15 @@ services:
   db:
     image: mariadb
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
-    restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=b8a2012fabd783890dcd7730dba669d4
-      - MYSQL_PASSWORD=dab60c54a297cd158249b9aec0
-      - MYSQL_DATABASE=ctf
-      - MYSQL_USER=dbuser
+    volumes:
+      - ${PWD}/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
 
   app:
     build: ./.
     ports:
-      - 127.0.0.1:8080:80
+      - 127.0.0.1:85:80
     links:
       - db
-    restart: always
 

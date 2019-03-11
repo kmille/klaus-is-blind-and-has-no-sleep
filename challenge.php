@@ -3,7 +3,7 @@ include "flag.php";
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 
-if(isset($_GET['src']) {
+if(isset($_GET['src'])) {
     show_source(__FILE__);
     exit();
 }
@@ -21,7 +21,7 @@ if(isset($_GET['src']) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-	if(!isset($_POST['username']) and !isset($_POST['password'])) {
+	if(!isset($_POST['username']) or !isset($_POST['password'])) {
 		echo "username and password missing";
 		exit();
 	};
