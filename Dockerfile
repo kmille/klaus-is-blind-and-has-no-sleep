@@ -9,6 +9,9 @@ RUN apt-get update -qy && \
 
 RUN rm -rf /var/www/html/index.html
 
+RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log && \
+    ln -sf /proc/self/fd/1 /var/log/apache2/error.log
+
 ADD /challenge.php /var/www/html/index.php
 ADD flag.php  /var/www/html/flag.php
 

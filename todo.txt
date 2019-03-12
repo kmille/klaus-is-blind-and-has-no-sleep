@@ -2,5 +2,3 @@ doku:
 curl localhost/test.php -d 'password[]' -d "username=-1' union select 1,NULL-- -" 
 
 alte docker container aufräumen
-
-check sleep und benchmark

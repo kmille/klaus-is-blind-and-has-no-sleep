@@ -19,6 +19,13 @@ if(isset($_GET['src'])) {
 
 <?php
 
+function input_validation($input) {
+    if (strpos(strtolower($input), "sleep") !== false or strpos(strtolower($input), "benchmark") !== false) {
+        echo "NOPE";
+        exit();
+    }
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	if(!isset($_POST['username']) or !isset($_POST['password'])) {
@@ -28,6 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	$username = $_POST['username'];
 	$password = $_POST['password'];
+
+    input_validation($username);
+    input_validation($password);
 
 	$mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name);
 	$result = $mysqli->query("SELECT username, password FROM login where username = '$username'");
