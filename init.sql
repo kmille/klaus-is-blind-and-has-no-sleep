@@ -1,5 +1,5 @@
-CREATE USER 'dbuser'@'localhost' IDENTIFIED BY 'dab60c54a297cd158249b9aec0';
-GRANT ALL PRIVILEGES ON * . * TO 'dbuser'@'localhost';
+CREATE USER 'dbuser'@'%' IDENTIFIED BY 'dab60c54a297cd158249b9aec0';
+GRANT ALL PRIVILEGES ON * . * TO 'dbuser'@'%';
 CREATE DATABASE ctf;
 
 CREATE TABLE ctf.login (

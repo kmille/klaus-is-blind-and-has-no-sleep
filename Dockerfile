@@ -14,6 +14,7 @@ RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log && \
 
 ADD /challenge.php /var/www/html/index.php
 ADD flag.php  /var/www/html/flag.php
+ADD dbsettings.php  /var/www/html/dbsettings.php
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data

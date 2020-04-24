@@ -7,12 +7,12 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=b8a2012fabd783890dcd7730dba669d4
     volumes:
-      - ${PWD}/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - /home/kmille/projects/klaus/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
 
   app:
     build: ./.
     ports:
-      - 127.0.0.1:85:80
+      - 127.0.0.1:8080:80
     links:
       - db
 

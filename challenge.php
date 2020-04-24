@@ -1,5 +1,7 @@
 <?php
 include "flag.php";
+include "dbsettings.php";
+// for debugging:
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 
@@ -13,7 +15,7 @@ if(isset($_GET['src'])) {
 	<input type="text" placeholder="username" name="username"/>
 	<input type="password" placeholder="password" name="password"/>
 	<br>
-	<input type="submit" vlaue="Submit"/><br>
+	<input type="submit" value="Login"/><br>
 </html>
 
 
